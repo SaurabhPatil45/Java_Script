@@ -54,5 +54,5 @@ console.log(sttr);               //true
  let number=33
 
  let nm=String(number)
- console.log(nm);
- console.log(typeof nm);
+ console.log(nm);                    //33
+ console.log(typeof nm);             // string
