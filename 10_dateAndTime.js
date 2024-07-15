@@ -25,7 +25,7 @@ console.log(myNewDate.getTime()); //1673481600000
 
 //To convert in second
 
-console.log(Math.floor(Date.now()/1000));  //1721055078 sec
+console.log(Math.floor(Date.now()/1000));  //1721055078 sec10
 
 // We have aslo get methods.
 
