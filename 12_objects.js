@@ -50,3 +50,48 @@ user.greetTwo=function(){
 }
 
 console.log(user.greetTwo());   //Hello users Ram
+
+
+//Singelton Object
+const tinderUser=new Object()
+
+//Non singleton Object
+const tUser={}
+
+
+//object inside object
+
+const mainuser={
+    email:"dff@gmail.com",
+     fullName:{
+        userFullname:{
+        firstName:"Saur",
+        lastName:"patil"
+        }
+    }
+}
+console.log(mainuser.fullName.userFullname.firstName);
+
+
+//Object Merging
+
+const obj1={1:"a",2:"b"}
+const obj2={3:"c",4:"d"}
+const obj3={obj1,obj2}
+console.log(obj3);    //{ obj1: { '1': 'a', '2': 'b' }, obj2: { '3': 'c', '4': 'd' } }
+
+const obj4=Object.assign({}, obj1,obj2)  //we use {} as target and other objects as source
+console.log(obj4);   //{ '1': 'a', '2': 'b', '3': 'c', '4': 'd' }
+
+const obj5={...obj1, ...obj2}
+console.log(obj5);     //{ '1': 'a', '2': 'b', '3': 'c', '4': 'd' }
+
+
+console.log(Object.keys(obj1));  //[ '1', '2' ]
+console.log(Object.values(obj1));//[ 'a', 'b' ]
+// key and value method gives output in array format
+
+console.log(Object.entries(obj1)); //[ [ '1', 'a' ], [ '2', 'b' ] ]
+// entries convert every key value pair in individual object
+
+console.log(obj1.hasOwnProperty('isLogged'));  //false
