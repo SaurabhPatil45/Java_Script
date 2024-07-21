@@ -45,4 +45,48 @@ function addNumber1(number1,number2){  //this is parameters
     return `${myName} is loggin`
  }
  console.log(subs());  //Sham is loggin
+
+
+
+ // how to use multiple parameters which are not konw
+
+ function calculateCartPrice(...num1){   //... is callled rest operator and it is also called spared operator
+      return num1
+ }
+ console.log(calculateCartPrice(200,400,600));  //[ 200, 400, 600 ]
+
+
+ function calculateCartPrice1(val1, val2,...num1){   //... is callled rest operator and it is also called spared operator
+   return num1
+}
+console.log(calculateCartPrice1(200,400,600));  //[ 600 ]
   
+
+
+// functions and objects
+
+const user={
+  userName:"saurabh",
+  age:20
+}
+ function handleObject(anyObject){
+   console.log(`Username is ${anyObject.userName} and age is ${anyObject.age}`);
+
+ }
+ handleObject(user)  //Username is saurabh and age is 20
+ handleObject({
+   userName:"Ram",
+   age:20
+ })                 //Username is Ram and age is 20  {we acn also pass object directly}
+
+
+
+ // Array and Objects
+
+ const array=[10,20,30,40]
+ function getArray(anyArray){
+   return anyArray[1]
+
+ }
+ console.log(getArray(array));   //20
+ console.log(getArray([99,98,97]));  //98
