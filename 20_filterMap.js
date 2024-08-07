@@ -59,4 +59,15 @@ console.log(userBooks2);  //[ { title: 'Book6', genre: 'Fiction', publich: 2000 
 
 
 
-//
+// chaning: using two methods
+
+const myNumbers=[1,2,3,4]
+const newNum=myNumbers
+.map((item)=>item*10)
+.map((item)=>item+1)
+.filter((item)=>item>=11)
+
+console.log(newNum);   //[ 11, 21, 31, 41 ]
+
+
+// reduce()

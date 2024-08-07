@@ -3,27 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DOM Manipulation</title>
+    <title>DOM Learning</title>
     <style>
-
+        .bg-black{
+            background-color: black;
+            color: aliceblue;
+        }
     </style>
 </head>
-<body>
-    <div class="container">
-        <h1 id="main-heading">
-            Favourite Movie
-        </h1>
+<body class="bg-black">
+    <div class="bg-black">
+        <h1 id="title"class="heading">DOM Learning</h1>
+        <p>Lorem ipsum dolor sit amet.</p>
         <ul>
-            <li class="list-items">A</li>
-            <li class="list-items">B</li>
-            <li class="list-items">C</li>
-            <li class="list-items">D</li>
-            <li class="list-items">E</li>  
+            <li>sds</li>
+            <li>sdfds</li>
+            <li>sdf</li>
         </ul>
-
+        
     </div>
-
-    <script src="app.js"></script>
-    
 </body>
+<script> 
+    document.getAttribute='id'  // we have both get and set attribute methods
+   const title= document.getElementById('title')
+   title.style.color='red'
+   title.style.backgroundColor='pink'
+   title.textContent  // this will give content predent in title
+   title.innerHTML
+   title.innerText
+   // This three will give same value
+   // innerText will show only content which is visible that is content which is not hidden by any CSS property
+   //innerContent will give all content including content which is hidden by CSS property as well
+   //innerHTML will return all values including HTML tag present in between letters
+
+   document.querySelector('h1') // this method will return first tag only
+   document.querySelector('#title')
+   document.querySelector('.heading')
+
+   const selectN=document.querySelectorAll('li') // in result we get nodelist which is similar to array but not have complete propertirs of array
+   selectN[0].style.color='Pink'   //IMP 
+   // we can able to use for each loop in node list
+
+   selectN.forEach(function(l){
+
+    l.style.backgroundColor='yellow'
+   })
+
+   //we can able to convert Node List into array
+  const myConvertedArray= Array.from(selectN)  // using this nodelist is converted to array
+  myConvertedArray.forEach(function(li){
+
+    li.style.borderRadius=50
+  })
+  
+
+</script>
 </html>
+
+<!-- //document.getElementById('title').id
+'title'
+document.getElementById('title').class
+undefined
+document.getElementById('title').className
+'heading' -->
