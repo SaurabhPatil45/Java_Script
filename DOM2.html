@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body style="background-color: black; color:aliceblue">
+     <div class="parent">
+        <div class="days">Monday</div>
+        <div class="days">Tuesday</div>
+        <div class="days">Wednesday</div>
+        <div class="days">Thursday</div>
+        
+
+    </div>
+</body>
+<script>
+  const parent=document.querySelector('.parent')
+  parent.style.backgroundColor = 'red';
+  console.log(parent);
+  console.log(parent.children);  // It will give HTML collection. It is array like property
+  parent.children[1].style.backgroundColor='pink'
+  console.log(  (parent.children[2].innerHTML));
+  //we can able to use for loop also
+  for(let j=0;j<parent.children.length;j++){
+    console.log(parent.children[j].innerHTML);
+    
+  }
+
+  console.log(parent.firstElementChild);  // This will give first children element
+  console.log(parent.lastElementChild);  // this will give last child element
+
+  const dayOne=document.querySelector('.days')
+  console.log(dayOne);
+  console.log(dayOne.parentElement); // It will give parent element of selected child
+  console.log(dayOne.nextElementSibling);
+  
+
+  
+  
+
+
+  
+  
+  
+
+
+  
+  
+</script>
+</html>
