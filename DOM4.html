@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM ELEMENT EDIT and REOVE</title>
+</head>
+<body style="background-color: black; color:aliceblue">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName) {
+        const list=document.createElement('li')  // cretaed element
+        list.innerHTML=`${langName}`            //added the content in element from function
+        document.querySelector('.language').appendChild(list) // selected the element(Class) in which list element in insterted
+        
+    }
+    addLanguage("python")  // called the function
+    addLanguage("java")
+</script>
+</html>
