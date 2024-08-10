@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML EVENTS BABY</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+    // Java script run all events sequentially
+    // document.getElementById('owl').onclick=function(){
+    //     alert(`owl Clicked`)
+    // } this not great apporach
+
+
+
+    // document.getElementById('owl').addEventListener('click',function(e){
+
+    //     alert(`owl clicked again`)
+    // },false)  //there are three parameters for eventlistner function. false and true are important. It is ddefault
+
+
+
+    //  R&D about below topics
+    // type, timeStamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget
+    // clientX, clientY, screenX, screenY
+    // altKey, ctrlKey, shiftKey, keyCode
+
+
+    //Event Propogation(Bubbling)
+//     document.getElementById('images').addEventListener('click',function(e){
+
+//     console.log(`clicked inside the ul`);
+    
+// },false) 
+
+// document.getElementById('owl').addEventListener('click',function(e){
+
+// console.log(`clicked inside the owl`);
+
+// },false)  // when we clicked on owl then first clicked inside owl execute then clicked inside ul execute
+
+
+
+// when we use True in place of false then we start capturing mode On. Then it will first print clicked inside ul then owl
+// capturing mode goes from top to Bottom
+
+// document.getElementById('images').addEventListener('click',function(e){
+
+// console.log(`clicked inside the ul`);
+
+// },true) 
+
+// document.getElementById('owl').addEventListener('click',function(e){
+
+// console.log(`clicked inside the owl`);
+//e.stopPropogation() using this event will not bubble and not call upper event. Only clicked inside owl print
+
+
+// },true)
+
+// document.getElementById('google').addEventListener('click',function(e){
+//     e.preventDefault()  // this will not go to link
+//     console.log("Clicked inside google");
+    
+
+// },false)
+
+
+document.querySelector('#images').addEventListener('click',function(e){
+console.log(e.target); // Here we get Targer of element that is whole image tag
+console.log(e.target.parentNode);  // It will give parent node that is li
+console.log(e.target.tagName); // It will give tag name like image , li
+
+let removeIt=e.target.parentNode
+removeIt.remove();  // but when we click on google it will remove all bcz parent item of li is ul
+
+// so we use below
+
+if(e.target.tagName==='IMG'){
+    let removeIt=e.target.parentNode
+    removeIt.remove(); 
+}
+
+
+
+},false)
+
+
+
+
+
+
+
+
+</script>
+</html>
